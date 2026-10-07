@@ -1,0 +1,3 @@
+# Analysis (CPU). The patching runner uses each model's own environment (torch, transformers, ...).
+numpy
+mujoco==3.4.0      # the version used for the paper's trajectories

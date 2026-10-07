@@ -1,0 +1,37 @@
+<mujoco model="franka_droid_kinematics">
+  <!-- Kinematic chain from world to gripper/grasp_site of the MolmoSpaces franka_droid model
+       (Apache-2.0, see LICENSE), with meshes, inertias and actuators removed. Body poses are
+       the compiled values of the full model, so forward kinematics is bitwise identical. -->
+  <!-- boundmass/boundinertia only satisfy the compiler; they do not affect kinematics. -->
+  <compiler angle="radian" boundmass="0.001" boundinertia="0.000001"/>
+  <worldbody>
+    <body name="fr3_root" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <body name="fr3_link0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+        <body name="fr3_link1" pos="0.0 0.0 0.333" quat="1.0 0.0 0.0 0.0">
+          <joint name="fr3_joint1" type="hinge" axis="0.0 0.0 1.0" pos="0.0 0.0 0.0"/>
+          <body name="fr3_link2" pos="0.0 0.0 0.0" quat="0.7071067811865475 -0.7071067811865475 0.0 0.0">
+            <joint name="fr3_joint2" type="hinge" axis="0.0 0.0 1.0" pos="0.0 0.0 0.0"/>
+            <body name="fr3_link3" pos="0.0 -0.316 0.0" quat="0.7071067811865475 0.7071067811865475 0.0 0.0">
+              <joint name="fr3_joint3" type="hinge" axis="0.0 0.0 1.0" pos="0.0 0.0 0.0"/>
+              <body name="fr3_link4" pos="0.0825 0.0 0.0" quat="0.7071067811865475 0.7071067811865475 0.0 0.0">
+                <joint name="fr3_joint4" type="hinge" axis="0.0 0.0 1.0" pos="0.0 0.0 0.0"/>
+                <body name="fr3_link5" pos="-0.0825 0.384 0.0" quat="0.7071067811865475 -0.7071067811865475 0.0 0.0">
+                  <joint name="fr3_joint5" type="hinge" axis="0.0 0.0 1.0" pos="0.0 0.0 0.0"/>
+                  <body name="fr3_link6" pos="0.0 0.0 0.0" quat="0.7071067811865475 0.7071067811865475 0.0 0.0">
+                    <joint name="fr3_joint6" type="hinge" axis="0.0 0.0 1.0" pos="0.0 0.0 0.0"/>
+                    <body name="fr3_link7" pos="0.088 0.0 0.0" quat="0.7071067811865475 0.7071067811865475 0.0 0.0">
+                      <joint name="fr3_joint7" type="hinge" axis="0.0 0.0 1.0" pos="0.0 0.0 0.0"/>
+                      <body name="gripper/base" pos="0.0 0.0 0.107" quat="0.7071067811865476 0.0 0.0 0.7071067811865476">
+                        <site name="gripper/grasp_site" pos="0.0 0.0 0.155" quat="0.7071067811865476 0.0 -0.0 -0.7071067811865475"/>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
